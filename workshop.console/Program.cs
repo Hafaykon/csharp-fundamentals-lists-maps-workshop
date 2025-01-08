@@ -15,6 +15,8 @@
 
 //1
 using System.Text.Encodings.Web;
+using workshop.console.m;
+using workshop.console.models;
 
 Dictionary<string, string> dictionary = new Dictionary<string, string>();
 dictionary.Add("fish", "a water animal");
@@ -93,7 +95,22 @@ var linq_p_items = from item in fridgeDictionary
                    select item;
 
 
+Person alice = new Person { Name = "Alice", Age = 30 };
 
+List<Person> people = new List<Person>()
+{
+    new Person { Name = "Bob", Age = 25 },
+    new Person { Name = "Charlie", Age = 35 }
+};
+
+people.Add(alice);
+
+Dictionary<string, Person> peopleDictionary = new Dictionary<string, Person>
+{
+    { "Alice", alice },
+    { "Bob", new Person { Name = "Bob", Age = 25 } },
+    { "Charlie", new Person { Name = "Charlie", Age = 35 } }
+};
 
 #endregion
 
